@@ -1,43 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Book.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rhee <rhee@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 21:42:23 by rhee              #+#    #+#             */
-/*   Updated: 2021/08/04 13:29:12 by rhee             ###   ########.fr       */
+/*   Updated: 2021/08/04 15:22:57 by rhee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef BOOK_HPP
+# define BOOK_HPP
 
-char	ft_capitalize(char c)
+# include "Contact.hpp"
+
+class Book
 {
-	
-	if (c >= 97 && c <= 122)
-		return (c - 32);
-	return (c);
-}
+private:
+    int cnt;
+    Contact PhoneBook[8];
+public:
+    Book()
+    {
+        std::cout << "Hi this is phonebook program I just coded!\nEnter ADD or SEARCH or EXIT plz!" << std::endl;
+        cnt = 0;
+    }
+    void command(void);
+    void get_info(void);
+    void search_info(void);
+    void cmd_exit(void);
+};
 
-int		main(int ac, char **av)
-{
-	int	i;
-	int	j;
-
-	i = 1;
-	if (ac == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-	else if (ac > 1)
-	{
-		while (i < ac)
-		{
-			j = 0;
-			while (av[i][j])
-				std::cout << ft_capitalize(av[i][j++]);
-			i++;
-		}
-		std::cout << std::endl;
-	}
-	return (0);
-}
+#endif

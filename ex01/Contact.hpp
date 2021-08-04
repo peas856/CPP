@@ -6,12 +6,12 @@
 /*   By: rhee <rhee@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 21:42:23 by rhee              #+#    #+#             */
-/*   Updated: 2021/08/03 23:08:59 by rhee             ###   ########.fr       */
+/*   Updated: 2021/08/04 14:58:31 by rhee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
 # include <iostream>
 # include <iomanip>

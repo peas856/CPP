@@ -6,15 +6,15 @@
 #    By: rhee <rhee@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/03 12:58:02 by rhee              #+#    #+#              #
-#    Updated: 2021/08/03 21:34:32 by rhee             ###   ########.fr        #
+#    Updated: 2021/08/04 15:18:51 by rhee             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = PhoneBook
 
-SRCS = phone.cpp Contact.cpp
+SRCS = main.cpp Contact.cpp Book.cpp
 OBJS = $(SRCS:.cpp=.o)
-INC = Contact.hpp
+INC = Book.hpp
 
 FLAGS = -Wall -Wextra -Werror
 
