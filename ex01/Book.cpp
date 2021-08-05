@@ -6,7 +6,7 @@
 /*   By: rhee <rhee@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 21:42:23 by rhee              #+#    #+#             */
-/*   Updated: 2021/08/04 15:25:08 by rhee             ###   ########.fr       */
+/*   Updated: 2021/08/05 16:02:04 by rhee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ void	Book::command(void)
 	std::string input;
 	
 	std::cout << ">> ";
-	getline(std::cin, input);
+	if (getline(std::cin, input).eof())
+		exit(1);
 	if (input == "ADD")
 		get_info();
 	else if (input == "SEARCH")
@@ -33,19 +34,24 @@ void	Book::get_info(void)
 
     idx = cnt % 8;
     std::cout << "First name: ";
-	getline(std::cin, input);
+	if (getline(std::cin, input).eof())
+		exit(1);
 	PhoneBook[idx].set_firstname(input);
 	std::cout << "Last name: ";
-	getline(std::cin, input);
+	if (getline(std::cin, input).eof())
+		exit(1);
 	PhoneBook[idx].set_lastname(input);
 	std::cout << "Nickname: ";
-	getline(std::cin, input);
+	if (getline(std::cin, input).eof())
+		exit(1);
 	PhoneBook[idx].set_nickname(input);
     std::cout << "Phone number: ";
-	getline(std::cin, input);
+	if (getline(std::cin, input).eof())
+		exit(1);
 	PhoneBook[idx].set_phonenumber(input);
 	std::cout << "Darkest Secret: ";
-	getline(std::cin, input);
+	if (getline(std::cin, input).eof())
+		exit(1);
 	PhoneBook[idx].set_darkestsecret(input);
     cnt += 1;
 }
@@ -68,15 +74,21 @@ void	Book::search_info(void)
         while (++i < count)
             PhoneBook[i].print_default(i+1);
         std::cout << "Let me know the index of the info you want to know : ";
-        while (!(std::cin >> idx) || idx < 1 || idx > count)
-        {
-            std::cout << "Enter valid index: ";
-            std::cin.clear();
-            std::cin.ignore(100,'\n');
-        }
-        PhoneBook[idx - 1].print_info();
-        std::cin.clear();
-        std::cin.ignore(100,'\n');
+		if ((std::cin >> idx).eof())
+			exit(1);
+		else{
+			while (!idx || idx < 1 || idx > count)
+			{
+				std::cout << "Enter valid index: ";
+				std::cin.clear();
+				std::cin.ignore(100,'\n');
+				if((std::cin >> idx).eof())
+					exit(1);
+			}
+			PhoneBook[idx - 1].print_info();
+			std::cin.clear();
+			std::cin.ignore(100,'\n');
+		}
     }
 }
 
