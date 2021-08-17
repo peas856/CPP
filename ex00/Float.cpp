@@ -59,19 +59,3 @@ double Float::toDouble(void) const {
 		return static_cast<double>(_f);
 	}
 }
-
-const char* Float::NonDisplayableException::what(void) const throw () {
-	return "Non displayable";
-}
-
-const char* Float::ImpossibleException::what(void) const throw () {
-	return "impossible";
-}
-
-const char* Float::NanfException::what(void) const throw () {
-	return "nanf";
-}
-
-const char* Float::NandException::what(void) const throw () {
-	return "nan";
-}

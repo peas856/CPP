@@ -22,6 +22,7 @@ Char& Char::operator=(Char const& src) {
 
 std::string Char::toChar(void) const {
 	std::string s;
+	
 	s += _c;
 	return "'" + s + "'";
 }

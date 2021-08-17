@@ -16,27 +16,6 @@ class Float : public ABase {
 		virtual float toFloat(void) const;
 		virtual double toDouble(void) const;
 
-
-		class NonDisplayableException : public std::exception {
-			public:
-				const char* what(void) const throw ();
-		};
-
-		class ImpossibleException : public std::exception {
-			public:
-				const char* what(void) const throw ();
-		};
-
-		class NanfException : public std::exception {
-			public:
-				const char* what(void) const throw ();
-		};
-
-		class NandException : public std::exception {
-			public:
-				const char* what(void) const throw ();
-		};
-
 	private:
 		float    _f;
 };

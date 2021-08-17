@@ -8,9 +8,10 @@
 # include "Double.hpp"
 # include <cctype>
 # include <iomanip> //std::fixed
+# include <exception>
 
 
-void printTypes(ABase* type, std::string const& str);
+void printType(ABase* type, std::string const& str);
 ABase* getType(std::string const& str);
 
 

@@ -1,11 +1,4 @@
-# include "ABase.hpp"
-# include "Char.hpp"
-# include "Int.hpp"
-# include "Float.hpp"
-# include "Double.hpp"
-# include <exception>
-# include <cctype>
-# include <iomanip>
+# include "checkType.hpp"
 
 ABase* getType(std::string const& str) {
 	int i;
@@ -50,10 +43,9 @@ int getPrecision(std::string const& str){
 	return precision;
 }
 
-void printTypes(ABase* type, std::string const& str) {
+void printType(ABase* type, std::string const& str) {
 	int precision = getPrecision(str);
-
-	std::cout << std::fixed;
+	
 	try {
 		std::cout << "char: " << type->toChar() << std::endl;
 	} catch (std::exception& e) {
@@ -65,12 +57,12 @@ void printTypes(ABase* type, std::string const& str) {
 		std::cout << e.what() << std::endl;
 	}
 	try {
-		std::cout << "float: " << std::setprecision(precision) << type->toFloat() << "f" << std::endl;
+		std::cout << "float: " << std::fixed <<  std::setprecision(precision) << type->toFloat() << "f" << std::endl;
 	} catch (std::exception& e) {
 		std::cout << e.what() << std::endl;
 	}
 	try {
-		std::cout << "double: " << std::setprecision(precision) << type->toDouble() << std::endl;
+		std::cout << "double: " << std::fixed << std::setprecision(precision) << type->toDouble() << std::endl;
 	} catch (std::exception& e) {
 		std::cout << e.what() << std::endl;
 	}

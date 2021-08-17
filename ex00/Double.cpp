@@ -59,19 +59,3 @@ double Double::toDouble(void) const {
 		return _d;
 	}
 }
-
-const char* Double::NonDisplayableException::what(void) const throw () {
-	return "Non displayable";
-}
-
-const char* Double::ImpossibleException::what(void) const throw () {
-	return "impossible";
-}
-
-const char* Double::NanfException::what(void) const throw () {
-	return "nanf";
-}
-
-const char* Double::NandException::what(void) const throw () {
-	return "nan";
-}

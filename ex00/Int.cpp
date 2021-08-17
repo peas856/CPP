@@ -44,11 +44,3 @@ float Int::toFloat(void) const {
 double Int::toDouble(void) const {
 	return static_cast<double>(_i);
 }
-
-const char* Int::NonDisplayableException::what(void) const throw () {
-	return "Non displayable";
-}
-
-const char* Int::ImpossibleException::what(void) const throw () {
-	return "impossible";
-}

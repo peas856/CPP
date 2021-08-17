@@ -18,10 +18,18 @@ ABase& ABase::operator=(ABase const& rhs) {
 	return *this;
 }
 
-// std::string ABase::getStr(void) const {
-// 	return _str;
-// }
+const char* ABase::NonDisplayableException::what(void) const throw () {
+	return "Non displayable";
+}
 
-// void ABase::setStr(std::string const& str) {
-// 	_str = str;
-// }
+const char* ABase::ImpossibleException::what(void) const throw () {
+	return "impossible";
+}
+
+const char* ABase::NanfException::what(void) const throw () {
+	return "nanf";
+}
+
+const char* ABase::NandException::what(void) const throw () {
+	return "nan";
+}
