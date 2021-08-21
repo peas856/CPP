@@ -1,12 +1,5 @@
 #include "span.hpp"
 
-void test_range(void) {
-	std::cout << "*** test_range ***" << std::endl;
-	
-
-	std::cout << std::endl;
-}
-
 int main(void) {
 	std::cout << "Error test : empty or only one!" << std::endl;
 	Span sp = Span(0);
